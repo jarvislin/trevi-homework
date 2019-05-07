@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#363636">
 
@@ -7,12 +9,31 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="4dp"
-        android:text="確定"
-        android:textColor="#FFFFFF"
+        android:layout_gravity="center"
+        android:layout_margin="6dp"
+        android:background="@drawable/selector_button"
+        android:foreground="?selectableItemBackgroundBorderless"
         android:gravity="bottom|center_horizontal"
         android:paddingBottom="8dp"
-        android:layout_gravity="center"
-        android:background="@drawable/button_background"/>
+        android:text="確定"
+        android:textColor="@color/button_text" />
+
+    <View
+        android:id="@+id/viewLeftHighlight"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/highlight"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/viewRightHighlight"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/highlight"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
 </FrameLayout>

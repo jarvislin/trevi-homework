@@ -13,7 +13,9 @@ import kotlinx.android.synthetic.main.view_item.view.*
 
 class ItemView @kotlin.jvm.JvmOverloads
 constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
-    FrameLayout(context, attrs, defStyleAttr) {
+    FrameLayout(context, attrs, defStyleAttr),Highlightable {
+
+    private var color: Int = 0
 
     init {
         LayoutInflater.from(context).inflate(R.layout.view_item, this, true)
@@ -31,18 +33,27 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         textRandom.visibility = GONE
     }
 
-    fun highlight() {
-        background = ContextCompat.getDrawable(context, R.drawable.item_highlight_background)
+    override fun highlight() {
+        val layerDrawable = ContextCompat.getDrawable(context, R.drawable.item_highlight_background) as LayerDrawable
+        val layerBackground = layerDrawable.findDrawableByLayerId(R.id.background) as GradientDrawable
+        layerBackground.setColor(color)
+        background = layerDrawable
     }
 
-    fun clearHighlight() {
-        background = ContextCompat.getDrawable(context, R.drawable.item_background)
+    override fun clearHighlight() {
+        setItemBackgroundColor(color)
     }
 
     fun setItemBackgroundColor(color: Int) {
+        this.color = color
         val layerDrawable = ContextCompat.getDrawable(context, R.drawable.item_background) as LayerDrawable
         val layerBackground = layerDrawable.findDrawableByLayerId(R.id.background) as GradientDrawable
         layerBackground.setColor(color)
         background = layerDrawable
     }
+}
+
+interface Highlightable {
+    fun highlight()
+    fun clearHighlight()
 }

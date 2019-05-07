@@ -8,7 +8,7 @@ import com.jarvislin.trevi.base.BaseView
 import com.jarvislin.trevi.rule.ColumnRowRule
 import kotlinx.android.synthetic.main.activity_question1.*
 
-class Question2Activity :BaseActivity(), Question2View {
+open class Question2Activity :BaseActivity(), Question2View {
 
     companion object {
         fun start(context: Context) {

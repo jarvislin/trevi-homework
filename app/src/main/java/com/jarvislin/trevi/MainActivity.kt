@@ -12,5 +12,6 @@ class MainActivity : AppCompatActivity() {
 
         buttonQuestion1.setOnClickListener { Question1Activity.start(this) }
         buttonQuestion2.setOnClickListener { Question2Activity.start(this) }
+        buttonQuestion3.setOnClickListener { Question3Activity.start(this) }
     }
 }

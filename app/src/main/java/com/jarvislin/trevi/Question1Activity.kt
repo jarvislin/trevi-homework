@@ -22,6 +22,8 @@ class Question1Activity : BaseActivity(), BaseView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question1)
 
+        supportActionBar?.title = "題目1"
+
         buttonSubmit.setOnClickListener {
             presenter.onSubmit(editColumn.text.toString(), editRow.text.toString())
         }

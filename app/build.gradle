@@ -37,6 +37,7 @@ dependencies {
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.2.0'
     implementation 'com.jakewharton.timber:timber:4.6.0'
     testImplementation 'junit:junit:4.12'
+    testImplementation 'com.nhaarman:mockito-kotlin:1.5.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
